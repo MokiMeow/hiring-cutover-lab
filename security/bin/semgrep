@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+metrics_off=false
+for arg in "$@"; do
+  if [ "$arg" = '--metrics=off' ]; then metrics_off=true; fi
+done
+if [ "$metrics_off" != true ]; then exit 82; fi
+security_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+node "$security_dir/repair-apiiro.mjs" "$@" || exit $?
+exec "$SEMGREP_BINARY" --jobs=1 --max-memory=1024 --disable-version-check --no-git-ignore --exclude='*.key' --exclude='*.pem' --exclude='.env*' --exclude='node_modules' --exclude='artifacts' --exclude='docs/research' --exclude='public/vendor' "$@"

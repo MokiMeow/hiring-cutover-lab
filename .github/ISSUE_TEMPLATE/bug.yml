@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducible problem using invented data.
+title: 'bug: '
+body:
+  - type: markdown
+    attributes:
+      value: 'For vulnerabilities use the Security tab. Never include credentials or candidate data.'
+  - type: input
+    id: version
+    attributes:
+      label: Commit and Node version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Steps and invented fixtures that reproduce the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true

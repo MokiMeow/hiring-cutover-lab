@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dart-obfuscation-conditions",
+    "file": "obfuscation/dart/dart_obfuscation_conditions.yml",
+    "extension": "dart",
+    "originalSha256": "2e4ae4a969526231493c9df1269789574bed5dbb47ddc640dcaa064ce51cb3bc",
+    "fixedSha256": "ab32b0b3d568d76da71fa49e7da68fdf89204472735d8d6d6b40b94d8312796b",
+    "hashEncoding": "utf8-lf"
+  },
+  {
+    "id": "java-obfuscation-declarations",
+    "file": "obfuscation/java/java_obfuscation_declarations.yml",
+    "extension": "java",
+    "originalSha256": "a8bcd2b4f75fe38e8d330f743dc8150d33ab1cad23346f8c1fd6a3d783a5bf2e",
+    "fixedSha256": "fe702c1fc3b313c887c22b3c6a9cf412597265792ac8adcac2f162939a106975",
+    "hashEncoding": "utf8-lf"
+  },
+  {
+    "id": "javascript-obfuscation-conditions",
+    "file": "obfuscation/javascript_typescript/javascript_obfuscation_conditions.yml",
+    "extension": "js",
+    "originalSha256": "d6ef282bb092b5f7df1faf3f92e1257169b7c042a048f211d7e6b8012622592e",
+    "fixedSha256": "a995173ae074dc490417ddf1ed0f7243390009ac4670ff00cdb730243f453886",
+    "hashEncoding": "utf8-lf"
+  }
+]

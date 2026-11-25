@@ -1,0 +1,14 @@
+node_modules
+artifacts
+docs/research
+public/vendor
+security/apiiro-fixes
+data
+coverage
+test-results
+playwright-report
+.env*
+*.pem
+*.key
+*.sqlite*
+.reanimate

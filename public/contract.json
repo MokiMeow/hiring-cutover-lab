@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "schemaVersion": 1,
+    "synthetic": true,
+    "expectedCounts": {
+      "jobs": 3,
+      "candidates": 2,
+      "applications": 2,
+      "assessments": 2
+    },
+    "jobs": [
+      {
+        "id": "j0",
+        "title": "Platform engineer",
+        "status": "open"
+      },
+      {
+        "id": "j1",
+        "title": "Product designer",
+        "status": "open"
+      },
+      {
+        "id": "j2",
+        "title": "Data engineer",
+        "status": "open"
+      }
+    ],
+    "candidates": [
+      {
+        "id": "c0",
+        "name": "Candidate 0001",
+        "email": "candidate0@example.test"
+      },
+      {
+        "id": "c1",
+        "name": "Candidate 0002",
+        "email": "candidate1@example.test"
+      }
+    ],
+    "applications": [
+      {
+        "id": "a0",
+        "candidateId": "c0",
+        "jobId": "j0",
+        "stage": "Technical",
+        "status": "active"
+      },
+      {
+        "id": "a1",
+        "candidateId": "c1",
+        "jobId": "j1",
+        "stage": "Technical",
+        "status": "active"
+      }
+    ],
+    "assessments": [
+      {
+        "id": "r0",
+        "applicationId": "a0",
+        "testId": "backend",
+        "status": "completed",
+        "score": 50,
+        "maxScore": 100
+      },
+      {
+        "id": "r1",
+        "applicationId": "a1",
+        "testId": "backend",
+        "status": "completed",
+        "score": 51,
+        "maxScore": 100
+      }
+    ]
+  },
+  "target": {
+    "schemaVersion": 1,
+    "synthetic": true,
+    "expectedCounts": {
+      "jobs": 3,
+      "candidates": 2,
+      "applications": 2,
+      "assessments": 2
+    },
+    "jobs": [
+      {
+        "id": "new-j0",
+        "title": "Platform engineer",
+        "status": "open"
+      },
+      {
+        "id": "new-j1",
+        "title": "Product designer",
+        "status": "open"
+      },
+      {
+        "id": "new-j2",
+        "title": "Data engineer",
+        "status": "open"
+      }
+    ],
+    "candidates": [
+      {
+        "id": "new-c0",
+        "name": "Candidate 0001",
+        "email": "candidate0@example.test"
+      },
+      {
+        "id": "new-c1",
+        "name": "Candidate 0002",
+        "email": "candidate1@example.test"
+      }
+    ],
+    "applications": [
+      {
+        "id": "new-a0",
+        "candidateId": "new-c0",
+        "jobId": "new-j0",
+        "stage": "Technical interview",
+        "status": "active"
+      },
+      {
+        "id": "new-a1",
+        "candidateId": "new-c1",
+        "jobId": "new-j1",
+        "stage": "Technical interview",
+        "status": "active"
+      }
+    ],
+    "assessments": [
+      {
+        "id": "new-r0",
+        "applicationId": "new-a0",
+        "testId": "backend",
+        "status": "completed",
+        "score": 50,
+        "maxScore": 100
+      },
+      {
+        "id": "new-r1",
+        "applicationId": "new-a1",
+        "testId": "backend",
+        "status": "completed",
+        "score": 51,
+        "maxScore": 100
+      }
+    ]
+  },
+  "mapping": {
+    "jobs": [
+      {
+        "sourceId": "j0",
+        "targetId": "new-j0"
+      },
+      {
+        "sourceId": "j1",
+        "targetId": "new-j1"
+      },
+      {
+        "sourceId": "j2",
+        "targetId": "new-j2"
+      }
+    ],
+    "candidates": [
+      {
+        "sourceId": "c0",
+        "targetId": "new-c0"
+      },
+      {
+        "sourceId": "c1",
+        "targetId": "new-c1"
+      }
+    ],
+    "applications": [
+      {
+        "sourceId": "a0",
+        "targetId": "new-a0"
+      },
+      {
+        "sourceId": "a1",
+        "targetId": "new-a1"
+      }
+    ],
+    "assessments": [
+      {
+        "sourceId": "r0",
+        "targetId": "new-r0"
+      },
+      {
+        "sourceId": "r1",
+        "targetId": "new-r1"
+      }
+    ]
+  },
+  "rules": {
+    "stageMap": {
+      "Technical": "Technical interview"
+    },
+    "trimDisplayText": false
+  }
+}

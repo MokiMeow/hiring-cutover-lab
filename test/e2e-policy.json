@@ -1,0 +1,22 @@
+{
+  "requiredTitles": [
+    "administrator compares a complete cohort, approves it and downloads verified evidence",
+    "a broken migration shows precise blocking differences and cannot be approved",
+    "file import uses safe text rendering, search, CSV export and mobile containment",
+    "administrator creates a viewer and the viewer can inspect but cannot create or approve",
+    "password rotation revokes the browser session and the new credential works",
+    "desktop uses reduced motion, makes no external requests and shows the complete workspace",
+    "a 3000-candidate cohort completes through HTTP, SQLite, browser review and bundle export",
+    "workspace forms, evidence and team controls reflow across seven widths with accessible keyboard dialogs",
+    "malformed UTF-8 file is rejected visibly without creating a rehearsal",
+    "lost comparison response keeps input and retries the same request without duplicate runs",
+    "expired sessions close open dialogs and clear the workspace before sign-in",
+    "older refresh and unauthorized responses cannot suppress or sign out a newer session",
+    "team revocation records a reason, ends access and protects the final administrator",
+    "late detail responses cannot replace the selected rehearsal or redirect its approval",
+    "malformed initial session responses cannot clear a newer signed-in account",
+    "a failed earlier review cannot overwrite or unlock a different review context",
+    "late member revocation responses preserve a newer member dialog and its draft",
+    "an initial unauthorized session check preserves credentials already being entered"
+  ]
+}

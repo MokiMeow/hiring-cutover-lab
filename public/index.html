@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Hiring Cutover Lab</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/details.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="app-header">
+      <a class="wordmark" href="/"
+        ><span class="brand-symbol" aria-hidden="true">CL</span
+        ><span>Cutover <b>Lab</b><small>Hiring operations</small></span></a
+      ><span class="mode">Synthetic workspace</span>
+      <div id="account" hidden>
+        <span id="identity"></span><button id="password-open">Password</button
+        ><button id="logout">Sign out</button>
+      </div>
+    </header>
+    <aside class="shell-nav" id="workspace-nav" hidden>
+      <p class="nav-label">WORKSPACE</p>
+      <nav aria-label="Workspace sections">
+        <a class="nav-link current" href="#compare" data-section="compare"
+          ><span>New rehearsal</span><span aria-hidden="true">01</span></a
+        ><a class="nav-link" href="#ledger" data-section="ledger"
+          ><span>Evidence ledger</span><span aria-hidden="true">02</span></a
+        ><a class="nav-link" href="#audit-panel" data-section="audit-panel"
+          ><span>Audit history</span><span aria-hidden="true">03</span></a
+        ><a class="nav-link" id="team-nav" href="#team" data-section="team"
+          ><span>Team access</span><span aria-hidden="true">04</span></a
+        >
+      </nav>
+      <div class="nav-boundary">
+        <span class="status-dot" aria-hidden="true"></span><strong>Offline by design</strong>
+        <p>Invented cohorts.<br />Local evidence.<br />No production writes.</p>
+        <span class="version">CANONICAL CONTRACT / V1</span>
+      </div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <section id="login" class="login-layout">
+        <div class="login-story">
+          <p class="eyebrow">A CLEARER HANDOVER</p>
+          <h1>Know what made<br />the move.</h1>
+          <p class="intro">
+            A measured rehearsal for a hiring-system change. Compare the records. Resolve the
+            differences. Keep the evidence.
+          </p>
+          <ol class="login-steps">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Bring both snapshots</strong>
+                <p>Use an explicit scope and identity mapping.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Inspect every difference</strong>
+                <p>Check records, relationships and scores.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Review before proceeding</strong>
+                <p>A separate decision, tied to the exact report.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="muted">
+            Synthetic, offline rehearsals. A passing report does not authorize a production
+            migration.
+          </p>
+        </div>
+        <form id="login-form" class="panel login-panel" aria-describedby="login-error">
+          <span class="eyebrow">YOUR WORKSPACE</span>
+          <h2>Welcome back</h2>
+          <p>Sign in to the rehearsal console.</p>
+          <label
+            >Username<input
+              name="username"
+              autocomplete="username"
+              required
+              value="admin"
+              maxlength="60"
+              aria-describedby="login-error" /></label
+          ><label
+            >Password<input
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              maxlength="128"
+              aria-describedby="login-error"
+          /></label>
+          <p id="login-error" class="error" role="alert"></p>
+          <button class="primary">Sign in</button>
+          <p class="muted">
+            Use the password from your local setup. No ATS account or cloud connection is required.
+          </p>
+        </form>
+      </section>
+      <section id="workspace" hidden aria-label="Cutover workspace">
+        <div class="breadcrumb">
+          Workspace <span aria-hidden="true">/</span> Migration rehearsals
+        </div>
+        <div class="hero">
+          <div>
+            <p class="eyebrow">HIRING CUTOVER LAB</p>
+            <h1>Rehearse the move.</h1>
+            <p class="intro">Compare two snapshots. Resolve the differences. Keep the evidence.</p>
+          </div>
+          <div class="workspace-tag">
+            <span class="status-dot" aria-hidden="true"></span>Local evidence workspace
+          </div>
+        </div>
+        <div class="scope">
+          <strong>A rehearsal, with a clear boundary.</strong
+          ><span
+            >Jobs, candidates, applications and assessments. Synthetic data only. No live
+            cutover.</span
+          >
+        </div>
+        <p id="notice" role="status" tabindex="-1"></p>
+        <p id="permission-note" class="permission-note" hidden>
+          You have viewer access. You can inspect and export evidence. Ask an operator or
+          administrator to create a rehearsal.
+        </p>
+        <div class="stats" role="group" aria-label="Workspace totals">
+          <div>
+            <span>REHEARSALS</span><strong id="stat-total">0</strong
+            ><small>Across this workspace</small>
+          </div>
+          <div>
+            <span>READY FOR REVIEW</span><strong id="stat-ready">0</strong
+            ><small>Comparison passed, awaiting review</small>
+          </div>
+          <div>
+            <span>BLOCKED</span><strong id="stat-blocked">0</strong
+            ><small>Differences need attention</small>
+          </div>
+          <div>
+            <span>APPROVED</span><strong id="stat-approved">0</strong
+            ><small>Review saved with evidence</small>
+          </div>
+        </div>
+        <section id="compare" aria-labelledby="compare-title">
+          <div class="section-heading">
+            <div>
+              <span class="step-label">01 / COMPARE</span>
+              <h2 id="compare-title">Start a rehearsal</h2>
+            </div>
+            <p>Generate a known cohort or bring your own synthetic snapshots.</p>
+          </div>
+          <div class="builder">
+            <form id="generate-form" class="panel" aria-describedby="generate-error">
+              <div class="panel-caption">GENERATED DATA</div>
+              <h3>Synthetic cohort</h3>
+              <p class="panel-description">
+                Start with a complete move, or introduce a known fault to check the controls.
+              </p>
+              <div class="form-row">
+                <label
+                  >Candidates<input
+                    name="count"
+                    type="number"
+                    value="12"
+                    min="1"
+                    max="3000"
+                    required
+                    aria-describedby="generate-help generate-error" /></label
+                ><label
+                  >Scenario<select name="scenario" aria-label="Scenario">
+                    <option value="clean">Complete migration</option>
+                    <option value="missing">Missing candidate</option>
+                    <option value="mismatch">Changed score</option>
+                    <option value="orphan">Broken relationship</option>
+                    <option value="duplicate">Duplicate identity</option>
+                  </select></label
+                >
+              </div>
+              <label
+                >Rehearsal label<input
+                  name="label"
+                  value="Hiring cohort rehearsal"
+                  maxlength="100"
+                  required
+                  aria-describedby="generate-error"
+              /></label>
+              <p class="field-help" id="generate-help">
+                Up to 3,000 invented candidates. No real messages are sent.
+              </p>
+              <p id="generate-error" class="error" role="alert"></p>
+              <button class="primary" id="generate-submit">Generate and compare</button
+              ><span class="form-status" id="generate-status" role="status"></span>
+            </form>
+            <form id="import-form" class="panel" aria-describedby="import-help import-error">
+              <div class="panel-caption">YOUR FIXTURES</div>
+              <h3>Import a bundle</h3>
+              <p class="panel-description">
+                One canonical JSON file containing the source, target, mapping and comparison rules.
+              </p>
+              <label
+                >Rehearsal label<input
+                  name="label"
+                  value="Imported cohort"
+                  maxlength="100"
+                  required
+                  aria-describedby="import-error" /></label
+              ><label class="file-field"
+                >Canonical bundle (.json)<input
+                  name="file"
+                  type="file"
+                  accept=".json,application/json"
+                  required
+                  aria-describedby="import-help import-error"
+              /></label>
+              <p id="import-help" class="field-help">
+                Valid UTF-8 JSON, up to 8 MB. Only <code>@example.test</code> addresses are
+                accepted.
+              </p>
+              <p id="import-error" class="error" role="alert"></p>
+              <div class="form-actions">
+                <button id="import-submit">Import and compare</button
+                ><a class="text-link" href="/contract.json" download
+                  >Download a valid sample bundle</a
+                >
+              </div>
+              <span class="form-status" id="import-status" role="status"></span>
+            </form>
+          </div>
+        </section>
+        <section id="ledger" aria-labelledby="ledger-title">
+          <div class="section-heading">
+            <div>
+              <span class="step-label">02 / EVIDENCE</span>
+              <h2 id="ledger-title">Rehearsal ledger</h2>
+            </div>
+            <div class="table-tools">
+              <label class="compact"
+                >Search<input
+                  id="search"
+                  type="search"
+                  placeholder="Label, creator or result"
+                  autocomplete="off" /></label
+              ><button id="refresh">Refresh</button>
+            </div>
+          </div>
+          <div
+            class="table-wrap ledger-panel"
+            role="region"
+            aria-label="Rehearsal ledger table"
+            tabindex="0"
+          >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Rehearsal</th>
+                  <th scope="col">Created</th>
+                  <th scope="col">Result</th>
+                  <th scope="col">Review</th>
+                  <th scope="col"><span class="visually-hidden">Open</span></th>
+                </tr>
+              </thead>
+              <tbody id="runs"></tbody>
+            </table>
+            <div id="empty" class="empty-state">
+              <strong>Your evidence starts here</strong>
+              <p>Generate a cohort or import a bundle to run your first rehearsal.</p>
+            </div>
+          </div>
+          <div class="ledger-caption">
+            <span id="record-count">Latest 500 rehearsals</span
+            ><span>Reports keep up to 2,000 issue details and the full blocking count.</span>
+          </div>
+        </section>
+        <details class="panel history-panel" id="audit-panel">
+          <summary>Audit history</summary>
+          <p class="muted">The latest 200 recorded actions in this workspace.</p>
+          <div id="audit"></div>
+        </details>
+        <details class="panel" id="team" hidden>
+          <summary>Team access</summary>
+          <p>
+            Administrators review and manage access. Operators compare cohorts. Viewers inspect and
+            export evidence.
+          </p>
+          <form id="team-form" aria-describedby="team-error">
+            <div class="form-row">
+              <label
+                >New username<input
+                  name="username"
+                  required
+                  maxlength="60"
+                  pattern="[a-zA-Z0-9._-]+"
+                  autocomplete="off"
+                  aria-describedby="team-error" /></label
+              ><label
+                >Temporary password<input
+                  name="password"
+                  type="password"
+                  required
+                  minlength="16"
+                  maxlength="128"
+                  autocomplete="new-password"
+                  aria-describedby="team-password-help team-error" /></label
+              ><label
+                >Role<select name="role" aria-label="Role">
+                  <option>viewer</option>
+                  <option>operator</option>
+                  <option>admin</option>
+                </select></label
+              ><button class="primary">Add member</button>
+            </div>
+            <p id="team-password-help" class="field-help">
+              Use 16 to 128 characters. Share it through your own secure channel.
+            </p>
+            <p id="team-error" class="error" role="alert"></p>
+            <p id="team-status" role="status"></p>
+          </form>
+          <div id="members"></div>
+        </details>
+      </section>
+    </main>
+    <footer><span>Hiring Cutover Lab</span><span>Evidence first. People decide.</span></footer>
+    <dialog id="detail" aria-labelledby="detail-title">
+      <div class="dialog-head">
+        <div>
+          <span class="step-label">REHEARSAL EVIDENCE</span>
+          <h2 id="detail-title"></h2>
+        </div>
+        <button id="close-report" aria-label="Close report">Close</button>
+      </div>
+      <div id="detail-body"></div>
+      <nav class="downloads" aria-label="Export rehearsal evidence">
+        <a id="download-report">Download report JSON</a
+        ><a id="download-bundle">Download input bundle</a
+        ><a id="download-csv">Download issues CSV</a>
+      </nav>
+      <form id="review-form" hidden aria-describedby="review-help review-error">
+        <h3>Administrator review</h3>
+        <p id="review-help">
+          Confirm the synthetic scope, mapping, expected counts and report. This approval applies
+          only to this saved rehearsal.
+        </p>
+        <label
+          >Review evidence and reason<textarea
+            name="reason"
+            required
+            maxlength="300"
+            rows="2"
+            aria-describedby="review-help review-error"
+          ></textarea>
+        </label>
+        <p id="review-error" class="error" role="alert"></p>
+        <button class="primary">Approve rehearsal</button>
+      </form>
+      <div class="section-heading issue-heading">
+        <h3>Comparison issues</h3>
+        <label
+          >Filter issues<input id="issue-search" type="search" placeholder="Field, code or record"
+        /></label>
+      </div>
+      <div class="table-wrap" role="region" aria-label="Comparison issues table" tabindex="0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Code</th>
+              <th scope="col">Entity</th>
+              <th scope="col">Record</th>
+              <th scope="col">Field</th>
+              <th scope="col">Expected</th>
+              <th scope="col">Actual</th>
+            </tr>
+          </thead>
+          <tbody id="issues"></tbody>
+        </table>
+        <p id="no-issues" class="empty-state"></p>
+      </div>
+    </dialog>
+    <dialog id="password-dialog" aria-labelledby="password-title">
+      <div class="dialog-head">
+        <div>
+          <span class="step-label">ACCOUNT SECURITY</span>
+          <h2 id="password-title">Change your password</h2>
+        </div>
+        <button type="button" id="password-close" aria-label="Cancel password change">
+          Cancel
+        </button>
+      </div>
+      <form id="password-form" aria-describedby="password-help password-error">
+        <p id="password-help" class="muted">
+          Choose 16 to 128 characters. Changing your password signs out all your sessions.
+        </p>
+        <label
+          >Current password<input
+            name="currentPassword"
+            type="password"
+            required
+            autocomplete="current-password"
+            maxlength="128"
+            aria-describedby="password-error" /></label
+        ><label
+          >New password<input
+            name="newPassword"
+            type="password"
+            required
+            minlength="16"
+            maxlength="128"
+            autocomplete="new-password"
+            aria-describedby="password-help password-error"
+        /></label>
+        <p id="password-error" class="error" role="alert"></p>
+        <button class="primary">Change password</button>
+      </form>
+    </dialog>
+    <dialog id="disable-dialog" aria-labelledby="disable-title">
+      <div class="dialog-head">
+        <h2 id="disable-title">Disable team access</h2>
+        <button id="disable-close" type="button">Cancel</button>
+      </div>
+      <form id="disable-form">
+        <p id="disable-description"></p>
+        <label
+          >Reason for disabling access<textarea
+            name="reason"
+            required
+            maxlength="300"
+            rows="3"
+            aria-describedby="disable-error"
+          ></textarea>
+        </label>
+        <p id="disable-error" class="error" role="alert"></p>
+        <button class="danger">Disable access</button>
+      </form>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+node_modules/
+data/
+artifacts/
+.env*
+*.pem
+*.key
+*.sqlite*
+*.db
+*.log
+coverage/
+playwright-report/
+test-results/
+docs/research/
+.reanimate/
+.DS_Store
+Thumbs.db

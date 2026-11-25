@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if [ "$OS" = "Windows_NT" ] || [[ "$OSTYPE" == msys* || "$OSTYPE" == cygwin* ]]; then
+  exec "$JQ_BINARY" --binary "$@"
+else
+  exec "$JQ_BINARY" "$@"
+fi
